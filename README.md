@@ -1,20 +1,105 @@
-<<<<<<< HEAD
-# React + Vite
+# React Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern responsive developer portfolio built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive modern UI
+- Dark / Light mode
+- Glassmorphism navbar
+- Animated hover effects
+- Project cards with tech badges
+- Dynamic motivational quotes
+- Social media icons
+- Fully component-based architecture
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- CSS
+- React Icons
 
-## Expanding the ESLint configuration
+## Components
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# BasiraMehrzadPortfolio
->>>>>>> a95978d643355b4e0857ebdf19aef00b84642a17
+### Navbar
+
+- Navigation links
+- Theme toggle button
+
+### Header
+
+- Developer introduction
+- Welcome message using props
+- Random motivational quote
+
+### Profile
+
+- Profile image
+- Developer title
+- Short bio
+
+### About
+
+- Personal introduction
+- Goals section
+- Hobbies list
+- Show More / Show Less functionality
+
+### Projects
+
+- Dynamic project rendering using `.map()`
+- Featured project badge
+- Tech stack badges
+
+### Footer
+
+- Social media links
+- Dynamic current year
+
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/portfolio.git
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
+npm run dev
+
+## Responsive Design
+
+This project is fully responsive using:
+
+- Flexbox
+- CSS Grid
+- Media Queries
+
+## Theme Colors
+
+### Dark Theme
+
+- Background: `#050816`
+- Primary: `#00F5D4`
+- Accent: `#7C3AED`
+
+### Light Theme
+
+- Soft modern pastel palette
+
+## Future Improvements
+
+- Add React Router
+- Add animations with Framer Motion
+- Connect contact form
+- Add backend integration
+- Deploy online
+
+## Author
+
+Basira Mehrzad
