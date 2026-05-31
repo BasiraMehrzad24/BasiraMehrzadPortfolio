@@ -7,19 +7,16 @@ import {
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
         <div className="social-links">
-        <a href="https://github.com/">
+        <a href="https://github.com/BasiraMehrzad24">
         <FaGithub />
        </a>
 
-       <a href="https://linkedin.com/">
+       <a href="https://www.linkedin.com/in/basira-mehrzad-3679ab25a">
         <FaLinkedin />
        </a>
 
-      <a href="https://twitter.com/">
-      <FaTwitter />
-      </a>
       </div>
 
       <p>

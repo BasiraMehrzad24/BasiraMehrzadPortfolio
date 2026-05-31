@@ -18,8 +18,7 @@ function App() {
         setDarkMode={setDarkMode}
       />
 
-      <Header    message={`useEffect(() => {
-  console.log("Welcome to my personal webpage!");}, []);`} />
+      <Header    message={`Welcom! Here you will know more about me`} />
 
       <Profile
         image={basiramehrzad}

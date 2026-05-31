@@ -6,7 +6,7 @@ function About() {
   const hobbies = ["Coding", "Reading", "Sport", "Watching Movie"];
 
   return (
-    <section className="about">
+    <section id="about" className="about">
       <h2>About Me</h2>
 
       <p>

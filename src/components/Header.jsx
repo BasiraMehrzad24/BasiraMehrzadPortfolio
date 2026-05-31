@@ -13,7 +13,7 @@ function Header({ message }) {
   }, []);
 
   return (
-    <header className="header">
+    <header id="home" className="header">
       <h1>Hi, I'm Basira Mehrzad</h1>
 
       <p>{message}</p>
