@@ -3,8 +3,6 @@ function Profile({ image, title, bio }) {
     <section className="profile">
      <div className="profile-image-wrapper">
      <img src={image} alt="profile" className="profile-img" />
-
-     <div className="profile-lines"></div>
      </div>
 
       <div className="profile-content">

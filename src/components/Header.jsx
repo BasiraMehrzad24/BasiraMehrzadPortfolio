@@ -5,7 +5,7 @@ function Header({ message }) {
     "Keep learning every day",
     "Dream big and build bigger then your dream",
     "Code creates possibilities.",
-    "Small steps every day can make big chnages."
+    "Small steps every day can make big chnages.",
   ];
 
   const randomQuote = useMemo(() => {

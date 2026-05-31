@@ -504,6 +504,7 @@ transition:
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  --input-border: rgba(45, 212, 191, 0.25);
 }
 
 .light-theme {
@@ -519,6 +520,8 @@ transition:
   color: var(--text);
   min-height: 100vh;
   --navbar-bg: rgba(241, 229, 229, 0.402);
+   --input-border: rgba(217, 119, 6, 0.25);
+
 }
 
 .light-theme .project-card:hover {
@@ -568,6 +571,269 @@ transition:
     0 0 20px rgba(0, 245, 212, 0.35),
     0 0 35px rgba(124, 58, 237, 0.25);
 }
+
+/* contact form */
+
+.error {
+  color: #ef4444;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.contact {
+  padding: 80px 10%;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--input-border);
+
+  color: var(--text);
+
+  margin-bottom: 8px;
+
+  outline: none;
+
+  transition:
+    0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 8px rgba(0, 245, 212, 0.15);
+}
+
+.light-theme .contact-form input:focus,
+.light-theme .contact-form textarea:focus {
+  box-shadow:
+    0 0 10px rgba(217, 119, 6, 0.15);
+}
+
+
+.contact-form button {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 14px 28px;
+
+  border-radius: 14px;
+
+  color: var(--text);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+
+  transition:
+    0.3s ease,
+    box-shadow 0.3s ease;
+
+  background-image:
+   linear-gradient(var(--button-bg), var(--button-bg)),
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+
+  background-origin: border-box;
+
+  background-clip: padding-box, border-box;
+}
+
+.contact-form button:hover {
+  transform: translateY(-4px);
+
+  background-image:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    ),
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 0 20px rgba(0, 245, 212, 0.35),
+    0 0 35px rgba(124, 58, 237, 0.25);
+}
+
+.light-theme .contact-form button:hover {
+  color: #fff;
+}
+
+.toast {
+  position: fixed;
+
+  bottom: 30px;
+  right: 70px;
+
+  padding: 16px 24px;
+
+  border-radius: 14px;
+
+  color: white;
+
+  font-weight: 600;
+
+  z-index: 999;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent)
+  );
+
+  box-shadow:
+    0 0 20px rgba(0, 245, 212, 0.25),
+    0 0 40px rgba(124, 58, 237, 0.2);
+
+  animation: slideIn 0.4s ease;
+}
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-card {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 25px rgba(0, 245, 212, 0.2),
+    0 0 50px rgba(124, 58, 237, 0.15);
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.preview-header span {
+  font-size: 1.5rem;
+}
+
+.preview-header h3 {
+  color: var(--primary);
+}
+
+.preview-item {
+  margin-bottom: 20px;
+}
+
+.preview-item label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 0.85rem;
+
+  color: var(--secondary-text);
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+.preview-item p {
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background: var(--card-bg);
+
+  color: var(--text);
+
+  min-height: 50px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.dark-theme .preview-item p {
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.light-theme .preview-item p {
+  background: rgba(217, 119, 6, 0.08);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+
+.saved-hint {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(255, 193, 7, 0.15);
+  color: var(--text);
+  border-left: 2px solid #ffc107;
+}
+
 
 
 /* responsive */

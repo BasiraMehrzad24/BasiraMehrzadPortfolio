@@ -6,19 +6,17 @@ import Profile from "./components/Profile";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import basiramehrzad from "./assets/images/basiramehrzad.PNG"
+import Contact from "./components/Contact";
+import basiramehrzad from "./assets/images/basiramehrzad.PNG";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
     <div className={darkMode ? "dark-theme" : "light-theme"}>
-      <Navbar
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-      <Header    message={`Welcom! Here you will know more about me`} />
+      <Header message={`Welcom! Here you will know more about me`} />
 
       <Profile
         image={basiramehrzad}
@@ -28,6 +26,7 @@ function App() {
 
       <About />
       <Projects />
+      <Contact />
       <Footer />
     </div>
   );
