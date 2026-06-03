@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Contact() {
+  // this useEffect use for get name email and message for showing them in perview
   useEffect(() => {
     const savedName = localStorage.getItem("name");
 
@@ -19,8 +20,10 @@ function Contact() {
     }
   }, []);
 
-  const [name, setName] = useState("");
+  // this part is set the state for name email and msg
+  // useEffects are foe saving the inputs to browser local storage
 
+  const [name, setName] = useState("");
   useEffect(() => {
     localStorage.setItem("name", name);
   }, [name]);
@@ -40,13 +43,35 @@ function Contact() {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
+  const [emailHint, setEmailHint] = useState("");
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!email) {
+        setEmailHint("");
+        return;
+      }
+      const emailRegex = /\S+@\S+\.\S+/;
+      if (emailRegex.test(email)) {
+        setEmailHint("Valid Email");
+      } else {
+        setEmailHint("Please enter a valid email");
+      }
+    }, 400);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [email]);
+
+  // state for toast that appear for 3 second
   const [showToast, setShowToast] = useState(false);
 
+  // check the type of email
   function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
 
+  // this function use for validation , and show toast if it's send message successfully
   function handleSubmit() {
     let valid = true;
 
@@ -80,6 +105,7 @@ function Contact() {
         setShowToast(false);
       }, 3000);
 
+      // this part remove the form after successful submition
       localStorage.removeItem("name");
       localStorage.removeItem("email");
       localStorage.removeItem("message");
@@ -128,6 +154,16 @@ function Contact() {
               }}
             />
             {emailError && <p className="error">{emailError}</p>}
+            {emailHint && (
+              // this part check if the email is a valid type or not and show msg under input
+              <p
+                className={`email-hint ${
+                  emailHint === "Valid Email" ? "success" : "error"
+                }`}
+              >
+                {emailHint}
+              </p>
+            )}
           </div>
 
           <div className="form-group">

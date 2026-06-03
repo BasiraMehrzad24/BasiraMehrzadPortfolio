@@ -7,14 +7,18 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import Feedback from "./components/Feedback";
+import ProjectUpdates from "./components/ProjectUpdates";
+import Skills from "./components/Skills";
 import basiramehrzad from "./assets/images/basiramehrzad.PNG";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  // const [darkMode, setDarkMode] = useState(true);
+  const [theme, setTheme] = useState("dark");
 
   return (
-    <div className={darkMode ? "dark-theme" : "light-theme"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className={`${theme}-theme`}>
+      <Navbar theme={theme} setTheme={setTheme} />
 
       <Header message={`Welcom! Here you will know more about me`} />
 
@@ -25,8 +29,11 @@ function App() {
       />
 
       <About />
+      <Skills />
       <Projects />
       <Contact />
+      <Feedback />
+      <ProjectUpdates />
       <Footer />
     </div>
   );
