@@ -3,13 +3,22 @@ import profileImage from "../assets/images/basiramehrzad.PNG";
 
 function About() {
   const [showMore, setShowMore] = useState(false);
+  const [avatarReaction, setAvatarReaction] = useState("💻 Frontend Developer");
 
   return (
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-image">
-          <div className="image">
-            <img src={profileImage} alt="Basira" />
+          <div
+            className="image"
+            onMouseEnter={() => setAvatarReaction("💻 Frontend Developer")}
+            onMouseLeave={() => setAvatarReaction("👋 Hello!")}
+            onClick={() => setAvatarReaction("🚀 React Enthusiast")}
+          >
+            <img src={profileImage} alt="Profile" />
+
+            <div className="avatar-overlay">{avatarReaction}</div>
+
             <div className="lines"></div>
             <div className="dots"></div>
           </div>
@@ -25,12 +34,12 @@ function About() {
 
           <div className="about-stats">
             <div className="stat-card">
-              <h3>3+</h3>
+              <h3>5+</h3>
               <span>Projects</span>
             </div>
 
             <div className="stat-card">
-              <h3>4+</h3>
+              <h3>5+</h3>
               <span>Technologies</span>
             </div>
 

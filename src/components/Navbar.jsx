@@ -20,15 +20,15 @@ function Navbar({ theme, setTheme }) {
 
       <div className="theme-switcher">
         <button className="theme-btn" onClick={() => setTheme("dark")}>
-          🌙 Dark
+          Dark
         </button>
 
         <button className="theme-btn" onClick={() => setTheme("light")}>
-          ☀️ Light
+          Light
         </button>
 
         <button className="theme-btn" onClick={() => setTheme("ocean")}>
-          🌊 Ocean
+          Ocean
         </button>
       </div>
     </nav>

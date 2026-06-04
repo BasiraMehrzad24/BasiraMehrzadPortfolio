@@ -1,8 +1,8 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer id="contact" className="footer">
+    <footer className="footer">
       <div className="social-links">
         <a href="https://github.com/BasiraMehrzad24">
           <FaGithub />

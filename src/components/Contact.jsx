@@ -119,7 +119,7 @@ function Contact() {
 
   return (
     <>
-      <section className="contact">
+      <section className="contact" id="contact">
         <h2>Contact me!</h2>
         {hasSavedData && (
           <p className="saved-hint">📌 You have an unsent message saved.</p>
