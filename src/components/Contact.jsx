@@ -119,12 +119,11 @@ function Contact() {
 
   return (
     <>
-      {hasSavedData && (
-        <p className="saved-hint">📌 You have an unsent message saved.</p>
-      )}
       <section className="contact">
         <h2>Contact me!</h2>
-
+        {hasSavedData && (
+          <p className="saved-hint">📌 You have an unsent message saved.</p>
+        )}
         <div className="contact-form">
           <div className="form-group">
             <input

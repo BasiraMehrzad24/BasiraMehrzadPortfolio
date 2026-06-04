@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Profile from "./components/Profile";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
@@ -10,7 +9,6 @@ import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
 import ProjectUpdates from "./components/ProjectUpdates";
 import Skills from "./components/Skills";
-import basiramehrzad from "./assets/images/basiramehrzad.PNG";
 
 function App() {
   // const [darkMode, setDarkMode] = useState(true);
@@ -19,15 +17,7 @@ function App() {
   return (
     <div className={`${theme}-theme`}>
       <Navbar theme={theme} setTheme={setTheme} />
-
       <Header message={`Welcom! Here you will know more about me`} />
-
-      <Profile
-        image={basiramehrzad}
-        title="Frontend Developer"
-        bio="I build modern and smooth web apps with a different visual view."
-      />
-
       <About />
       <Skills />
       <Projects />

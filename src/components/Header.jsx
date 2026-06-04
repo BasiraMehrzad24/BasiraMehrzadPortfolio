@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 
-function Header({ message }) {
+function Header() {
   const quotes = [
-    "Keep learning every day",
-    "Dream big and build bigger then your dream",
+    "Keep learning every day.",
+    "Dream big and build bigger than your dreams.",
     "Code creates possibilities.",
-    "Small steps every day can make big chnages.",
+    "Small steps every day create big results.",
   ];
 
   const randomQuote = useMemo(() => {
@@ -13,12 +13,30 @@ function Header({ message }) {
   }, []);
 
   return (
-    <header id="home" className="header">
-      <h1>Hi, I'm Basira Mehrzad</h1>
+    <header id="home" className="hero">
+      <div className="hero-content">
+        <h2>
+          Hi, I'm <span>Basira Mehrzad</span>
+        </h2>
 
-      <p>{message}</p>
+        <p className="hero-description">
+          I create modern, responsive, and interactive web applications with
+          React and JavaScript, transforming ideas into beautiful digital
+          experiences.
+        </p>
 
-      <h3>{randomQuote}</h3>
+        <p className="hero-quote">"{randomQuote}"</p>
+
+        <div className="hero-buttons">
+          <a href="#projects" className="primary-btn">
+            View Projects
+          </a>
+
+          <a href="#contact" className="secondary-btn">
+            Contact Me
+          </a>
+        </div>
+      </div>
     </header>
   );
 }

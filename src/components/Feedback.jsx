@@ -6,27 +6,7 @@ function Feedback() {
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
   const [sortType, setSortType] = useState("highest");
-
-  // for adding feedback by user
-
-  function handleAddFeedback() {
-    if (!name || !comment) {
-      return;
-    }
-
-    const newFeedback = {
-      id: Date.now(),
-      name,
-      rating,
-      comment,
-    };
-
-    setFeedbacks([newFeedback, ...feedbacks]);
-
-    setName("");
-    setRating(5);
-    setComment("");
-  }
+  const [showModal, setShowModal] = useState(false);
 
   const [feedbacks, setFeedbacks] = useState(() => {
     const savedFeedbacks = localStorage.getItem("feedbacks");
@@ -49,12 +29,26 @@ function Feedback() {
         ];
   });
 
-  //  for saving feedbacks on local storage
+  function handleAddFeedback() {
+    if (!name || !comment) return;
+
+    const newFeedback = {
+      id: Date.now(),
+      name,
+      rating,
+      comment,
+    };
+
+    setFeedbacks([newFeedback, ...feedbacks]);
+
+    setName("");
+    setRating(5);
+    setComment("");
+  }
+
   useEffect(() => {
     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
   }, [feedbacks]);
-
-  // sorting starts here
 
   const sortedFeedbacks = [...feedbacks];
 
@@ -72,62 +66,79 @@ function Feedback() {
 
   return (
     <>
-      <div className="feedback-form">
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="feedback-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setShowModal(false)}>
+              ✕
+            </button>
 
-        <select
-          value={rating}
-          onChange={(e) => setRating(Number(e.target.value))}
-        >
-          <option value="1">1 Star</option>
-          <option value="2">2 Stars</option>
-          <option value="3">3 Stars</option>
-          <option value="4">4 Stars</option>
-          <option value="5">5 Stars</option>
-        </select>
+            <h2>Add Feedback</h2>
 
-        <textarea
-          placeholder="Your Feedback"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-        <button onClick={handleAddFeedback}>Add Feedback</button>
-      </div>
+            <select
+              value={rating}
+              onChange={(e) => setRating(Number(e.target.value))}
+            >
+              <option value="1">1 Star</option>
+              <option value="2">2 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="5">5 Stars</option>
+            </select>
 
-      <div className="sort-buttons">
-        <button
-          className={sortType === "highest" ? "active" : ""}
-          onClick={() => setSortType("highest")}
-        >
-          ⭐ Highest
-        </button>
+            <textarea
+              placeholder="Your Feedback"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
 
-        <button
-          className={sortType === "lowest" ? "active" : ""}
-          onClick={() => setSortType("lowest")}
-        >
-          📉 Lowest
-        </button>
-
-        <button
-          className={sortType === "newest" ? "active" : ""}
-          onClick={() => setSortType("newest")}
-        >
-          🕒 Newest
-        </button>
-      </div>
+            <button
+              onClick={() => {
+                handleAddFeedback();
+                setShowModal(false);
+              }}
+            >
+              Submit Feedback
+            </button>
+          </div>
+        </div>
+      )}
 
       <section className="feedback">
         <h2>Visitor Feedback</h2>
-        {sortedFeedbacks.map((feedback) => (
-          <FeedbackCard key={feedback.id} feedback={feedback} />
-        ))}
+
+        <div className="sort-dropdown">
+          <select
+            value={sortType}
+            onChange={(e) => setSortType(e.target.value)}
+          >
+            <option value="highest">⭐ Highest Rating</option>
+
+            <option value="lowest">📉 Lowest Rating</option>
+
+            <option value="newest">🕒 Newest First</option>
+          </select>
+        </div>
+
+        <div className="feedback-container">
+          {sortedFeedbacks.map((feedback) => (
+            <FeedbackCard key={feedback.id} feedback={feedback} />
+          ))}
+        </div>
+
+        <button
+          className="floating-feedback-btn"
+          onClick={() => setShowModal(true)}
+        >
+          💬
+        </button>
       </section>
     </>
   );

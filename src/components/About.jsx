@@ -1,39 +1,115 @@
 import { useState } from "react";
+import profileImage from "../assets/images/basiramehrzad.PNG";
 
 function About() {
   const [showMore, setShowMore] = useState(false);
 
-  const hobbies = ["Coding", "Reading", "Sport", "Watching Movie"];
-
   return (
-    <section id="about" className="about">
-      <h2>About Me</h2>
+    <section id="about" className="about-section">
+      <div className="about-container">
+        <div className="about-image">
+          <div className="image">
+            <img src={profileImage} alt="Basira" />
+            <div className="lines"></div>
+            <div className="dots"></div>
+          </div>
+        </div>
 
-      <p>
-        I am passionate about frontend development and building
-        beautiful user interfaces.
-      </p>
+        <div className="about-content">
+          <span className="about-tag">Frontend Developer</span>
+          <p>
+            I build modern, responsive, and user-friendly web applications with
+            React and JavaScript. I enjoy transforming ideas into clean,
+            interactive, and meaningful digital experiences.
+          </p>
 
-      {showMore && (
-        <p>
-          My goal is to become a skilled frontend developer who
-         creates innovative, responsive, and meaningful web
-         applications while continuously learning, improving,
-         and turning creative ideas into real-world solutions.
-        </p>
-      )}
+          <div className="about-stats">
+            <div className="stat-card">
+              <h3>3+</h3>
+              <span>Projects</span>
+            </div>
 
-      <button onClick={() => setShowMore(!showMore)}>
-        {showMore ? "Show Less" : "Show More"}
-      </button>
+            <div className="stat-card">
+              <h3>4+</h3>
+              <span>Technologies</span>
+            </div>
 
-      <h3>Hobbies</h3>
+            <div className="stat-card">
+              <h3>∞</h3>
+              <span>Learning</span>
+            </div>
+          </div>
 
-      <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>{hobby}</li>
-        ))}
-      </ul>
+          <button className="about-btn" onClick={() => setShowMore(!showMore)}>
+            {showMore ? "Show Less" : "Learn More"}
+          </button>
+
+          {showMore && (
+            <div className="about-extra">
+              <div className="info-grid">
+                <div className="info-card">
+                  <span>📍</span>
+                  <div>
+                    <h4>Location</h4>
+                    <p>Afghanistan</p>
+                  </div>
+                </div>
+
+                <div className="info-card">
+                  <span>🎓</span>
+                  <div>
+                    <h4>Education</h4>
+                    <p> Bachloar of Computer Science </p>
+                  </div>
+                </div>
+
+                <div className="info-card">
+                  <span>💻</span>
+                  <div>
+                    <h4>Focus</h4>
+                    <p>Frontend Development</p>
+                  </div>
+                </div>
+
+                <div className="info-card">
+                  <span>⚛️</span>
+                  <div>
+                    <h4>Main Stack</h4>
+                    <p>React & JavaScript</p>
+                  </div>
+                </div>
+
+                <div className="info-card">
+                  <span>📚</span>
+                  <div>
+                    <h4>Currently Learning</h4>
+                    <p>Advanced React & Modern UI Design</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="about-story">
+                <h3>My Journey</h3>
+
+                <p>
+                  My passion for web development started with creating simple
+                  websites and gradually evolved into building complete React
+                  applications. I enjoy solving problems, learning new
+                  technologies, and continuously improving my skills while
+                  creating projects that have real-world value.
+                </p>
+
+                <p>
+                  Every project helps me grow as a developer. I enjoy
+                  transforming ideas into modern, responsive, and user-friendly
+                  digital experiences while focusing on clean code, performance,
+                  and great user experience.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </section>
   );
 }
