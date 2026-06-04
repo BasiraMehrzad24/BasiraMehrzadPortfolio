@@ -1,4 +1,4 @@
-function Navbar({ theme, setTheme }) {
+function Navbar({ setTheme }) {
   return (
     <nav className="navbar">
       <h2>Basira Mehrzad</h2>

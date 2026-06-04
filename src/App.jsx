@@ -7,7 +7,6 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
-import ProjectUpdates from "./components/ProjectUpdates";
 import ScrollProgress from "./components/ScrollProgress";
 import Skills from "./components/Skills";
 
@@ -26,7 +25,6 @@ function App() {
       <Projects />
       <Contact />
       <Feedback />
-      <ProjectUpdates />
       <Footer />
     </div>
   );
