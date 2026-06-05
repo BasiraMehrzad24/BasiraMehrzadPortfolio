@@ -1,31 +1,62 @@
-import { useState, useEffect } from "react";
-function ProjectUpdates() {
-  const updates = [
-    "Portfolio deployed successfully",
-    "Added Feedback Wall",
-    "Dark Mode improved",
-    "Added Contact Form",
-    "Added React Animations",
-  ];
+import { useEffect, useState } from "react";
 
-  const [currentUpdate, setCurrentUpdate] = useState(updates[0]);
+const updatesData = [
+  {
+    id: 1,
+    type: "New Feature",
+    message: "Added project filtering system.",
+  },
+  {
+    id: 2,
+    type: "Bug Fix",
+    message: "Fixed modal scrolling issue.",
+  },
+  {
+    id: 3,
+    type: "Milestone",
+    message: "Portfolio reached Version 2.0.",
+  },
+  {
+    id: 4,
+    type: "Learning",
+    message: "Learned advanced React hooks.",
+  },
+  {
+    id: 5,
+    type: "Update",
+    message: "Improved theme switching.",
+  },
+];
+
+export default function ProjectUpdates() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * updates.length);
-
-      setCurrentUpdate(updates[randomIndex]);
+      setCurrentIndex((prev) => (prev + 1) % updatesData.length);
     }, 15000);
 
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="updates">
-      <h2>Live Project Updates</h2>
+  const currentUpdate = updatesData[currentIndex];
 
-      <div className="update-card">🚀 {currentUpdate}</div>
+  return (
+    <section className="project-updates">
+      <div className="orbit-wrapper">
+        {/* Fixed center */}
+        <div className="center-node">
+          <h3>{currentUpdate.type}</h3>
+          <p>{currentUpdate.message}</p>
+        </div>
+
+        {/* Moving emojis */}
+        <div className="orbit-item orbit-1">🚀</div>
+        <div className="orbit-item orbit-2">🐛</div>
+        <div className="orbit-item orbit-3">🎯</div>
+        <div className="orbit-item orbit-4">📚</div>
+        <div className="orbit-item orbit-5">🔄</div>
+      </div>
     </section>
   );
 }
-
-export default ProjectUpdates;

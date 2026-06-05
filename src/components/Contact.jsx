@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Contact() {
+function Contact({ title = "Contact Me!", showPreview = true }) {
   // this useEffect use for get name email and message for showing them in perview
   useEffect(() => {
     const savedName = localStorage.getItem("name");
@@ -119,91 +119,94 @@ function Contact() {
 
   return (
     <>
-      <section className="contact" id="contact">
-        <h2>Contact me!</h2>
-        {hasSavedData && (
-          <p className="saved-hint">📌 You have an unsent message saved.</p>
+      <div className="contact-layout">
+        <section className="contact contact-section" id="contact">
+          <h2>{title}</h2>
+
+          {hasSavedData && (
+            <p className="saved-hint">📌 You have an unsent message saved.</p>
+          )}
+
+          <div className="contact-form">
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (e.target.value.trim()) setNameError("");
+                }}
+              />
+              {nameError && <p className="error">{nameError}</p>}
+            </div>
+
+            <div className="form-group">
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (e.target.value.trim()) setEmailError("");
+                }}
+              />
+              {emailError && <p className="error">{emailError}</p>}
+
+              {emailHint && (
+                <p
+                  className={`email-hint ${
+                    emailHint === "Valid Email" ? "success" : "error"
+                  }`}
+                >
+                  {emailHint}
+                </p>
+              )}
+            </div>
+
+            <div className="form-group">
+              <textarea
+                placeholder="Your Message"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  if (e.target.value.trim()) {
+                    setMessageError("");
+                  }
+                }}
+              />
+              {messageError && <p className="error">{messageError}</p>}
+            </div>
+
+            <button onClick={handleSubmit}>Send Message</button>
+          </div>
+
+          {showToast && <div className="toast">Message sent successfully!</div>}
+        </section>
+
+        {showPreview && (
+          <div className="preview-card preview-card-large">
+            <div className="preview-header">
+              <span>💬</span>
+              <h2>Message Preview</h2>
+            </div>
+
+            <div className="preview-item">
+              <label>Name</label>
+              <p>{name || "Your name will appear here"}</p>
+            </div>
+
+            <div className="preview-item">
+              <label>Email</label>
+              <p>{email || "your@email.com"}</p>
+            </div>
+
+            <div className="preview-item">
+              <label>Message</label>
+              <p>{message || "Start typing your message..."}</p>
+            </div>
+          </div>
         )}
-        <div className="contact-form">
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-                if (e.target.value.trim()) {
-                  setNameError("");
-                }
-              }}
-            />
-            {nameError && <p className="error">{nameError} </p>}
-          </div>
-
-          <div className="form-group">
-            <input
-              type="email"
-              placeholder="Your Email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (e.target.value.trim()) {
-                  setEmailError("");
-                }
-              }}
-            />
-            {emailError && <p className="error">{emailError}</p>}
-            {emailHint && (
-              // this part check if the email is a valid type or not and show msg under input
-              <p
-                className={`email-hint ${
-                  emailHint === "Valid Email" ? "success" : "error"
-                }`}
-              >
-                {emailHint}
-              </p>
-            )}
-          </div>
-
-          <div className="form-group">
-            <textarea
-              placeholder="Your Message"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-                if (e.target.value.trim()) {
-                  setMessageError("");
-                }
-              }}
-            />
-            {messageError && <p className="error">{messageError}</p>}
-          </div>
-
-          <button onClick={handleSubmit}>Send Message</button>
-        </div>
-
-        {showToast && <div className="toast"> message sent successfully!</div>}
-      </section>
-      <div className="preview-card">
-        <div className="preview-header">
-          <span>💬</span>
-          <h3>Message Preview</h3>
-        </div>
-
-        <div className="preview-item">
-          <label>Name</label>
-          <p>{name || "Your name will appear here"}</p>
-        </div>
-
-        <div className="preview-item">
-          <label>Email</label>
-          <p>{email || "your@email.com"}</p>
-        </div>
-
-        <div className="preview-item">
-          <label>Message</label>
-          <p>{message || "Start typing your message..."}</p>
-        </div>
       </div>
     </>
   );

@@ -7,12 +7,14 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
+import ProjectUpdates from "./components/ProjectUpdates";
 import ScrollProgress from "./components/ScrollProgress";
 import Skills from "./components/Skills";
 
 function App() {
   // const [darkMode, setDarkMode] = useState(true);
   const [theme, setTheme] = useState("dark");
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <div className={`${theme}-theme`}>
@@ -23,9 +25,20 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Contact />
       <Feedback />
-      <Footer />
+      <ProjectUpdates />
+      <Footer openContact={() => setShowContact(true)} />
+      {showContact && (
+        <div className="modal-overlay" onClick={() => setShowContact(false)}>
+          <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setShowContact(false)}>
+              ✕
+            </button>
+
+            <Contact title="Contact Me!" showPreview={true} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

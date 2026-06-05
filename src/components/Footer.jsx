@@ -1,6 +1,6 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
 
-function Footer() {
+function Footer({ openContact }) {
   return (
     <footer className="footer">
       <div className="social-links">
@@ -11,6 +11,10 @@ function Footer() {
         <a href="https://www.linkedin.com/in/basira-mehrzad-3679ab25a">
           <FaLinkedin />
         </a>
+
+        <button className="contact-icon" onClick={openContact}>
+          <FaPhone />
+        </button>
       </div>
 
       <p>© {new Date().getFullYear()} Basira Mehrzad</p>
