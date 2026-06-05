@@ -2334,13 +2334,10 @@ width: 100%;
 .project-updates {
   position: relative;
   bottom: 100px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100%;
-
   z-index: 999;
 }
 
@@ -2350,11 +2347,14 @@ width: 100%;
   height: 200px;
 }
 
+.node-type {
+  color: var(--primary);
+}
 .orbit-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px dashed #24e6e6;
+  border: 2px dashed var(--primary);
   border-radius: 50%;
 }
 
@@ -2371,9 +2371,11 @@ width: 100%;
 
   border-radius: 50%;
 
-  border: 2px solid #27e7e7;
+  border: 2px solid var(--accent);
 
-  background: #07152d;
+  background: var(--card-bg);
+
+  color: var(--text);
 
   display: flex;
   flex-direction: column;
@@ -2411,8 +2413,9 @@ width: 100%;
 
   border-radius: 50%;
 
-  background: #0d1b3d;
-  border: 2px solid #24e6e6;
+  background: var(--card-bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 
   font-size: 24px;
 
