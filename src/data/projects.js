@@ -15,7 +15,7 @@ const projects = [
 
     duration: "2 Weeks",
 
-    status: "Completed",
+    status: "In Progress",
 
     challenges:
       "Building reusable React components, theme switching and animations.",

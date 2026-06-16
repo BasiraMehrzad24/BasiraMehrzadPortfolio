@@ -1,7 +1,7 @@
 import { useState } from "react";
 import projects from "../data/projects";
-import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
+import ProjectCard from "../components/ProjectCard";
+import ProjectModal from "../components/ProjectModal";
 
 function Projects() {
   const [selectedTech, setSelectedTech] = useState("All");

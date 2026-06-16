@@ -1,33 +1,39 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useTheme } from "./context/ThemeContext";
+import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import About from "./components/About";
-import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import Contact from "./components/Contact";
-import Feedback from "./components/Feedback";
-import ProjectUpdates from "./components/ProjectUpdates";
 import ScrollProgress from "./components/ScrollProgress";
-import Skills from "./components/Skills";
 
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./Pages/Contact";
+import NotFound from "./pages/NotFound";
+import ProjectDetails from "./pages/ProjectDetails";
 function App() {
-  // const [darkMode, setDarkMode] = useState(true);
-  const [theme, setTheme] = useState("dark");
+  const { theme } = useTheme();
   const [showContact, setShowContact] = useState(false);
 
   return (
     <div className={`${theme}-theme`}>
       <ScrollProgress />
 
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Header message={`Welcom! Here you will know more about me`} />
-      <About />
-      <Skills />
-      <Projects />
-      <Feedback />
-      <ProjectUpdates />
+      <Navbar theme={theme} />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
+      </Routes>
+
       <Footer openContact={() => setShowContact(true)} />
+
       {showContact && (
         <div className="modal-overlay" onClick={() => setShowContact(false)}>
           <div className="contact-modal" onClick={(e) => e.stopPropagation()}>

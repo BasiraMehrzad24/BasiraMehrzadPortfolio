@@ -1,3 +1,4 @@
+import TechBadge from "./TechBadge";
 function ProjectModal({ project, onClose }) {
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -44,9 +45,7 @@ function ProjectModal({ project, onClose }) {
 
             <div className="tech-stack">
               {project.techStack.map((tech) => (
-                <span key={tech} className="badge">
-                  {tech}
-                </span>
+                <TechBadge key={tech} tech={tech} />
               ))}
             </div>
 

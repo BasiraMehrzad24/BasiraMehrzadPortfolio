@@ -1,33 +1,53 @@
-function Navbar({ setTheme }) {
+import { NavLink } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
+
+function Navbar() {
+  const { theme, setTheme } = useTheme();
   return (
     <nav className="navbar">
       <h2>Basira Mehrzad</h2>
-
       <ul className="nav-links">
         <li>
-          <a href="#home">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
+
         <li>
-          <a href="#about">About</a>
+          <NavLink to="/about">About</NavLink>
         </li>
+
         <li>
-          <a href="#projects">Projects</a>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Projects
+          </NavLink>{" "}
         </li>
+
         <li>
-          <a href="#contact">Contact</a>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
 
       <div className="theme-switcher">
-        <button className="theme-btn" onClick={() => setTheme("dark")}>
+        <button
+          className={`theme-btn ${theme === "dark" ? "active-theme" : ""}`}
+          onClick={() => setTheme("dark")}
+        >
           Dark
         </button>
 
-        <button className="theme-btn" onClick={() => setTheme("light")}>
+        <button
+          className={`theme-btn ${theme === "light" ? "active-theme" : ""}`}
+          onClick={() => setTheme("light")}
+        >
           Light
         </button>
 
-        <button className="theme-btn" onClick={() => setTheme("ocean")}>
+        <button
+          className={`theme-btn ${theme === "ocean" ? "active-theme" : ""}`}
+          onClick={() => setTheme("ocean")}
+        >
           Ocean
         </button>
       </div>

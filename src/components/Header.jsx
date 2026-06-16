@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+
 function Header() {
   const quotes = [
     "Keep learning every day.",
@@ -63,13 +65,13 @@ function Header() {
         <p className="hero-quote">"{randomQuote}"</p>
 
         <div className="hero-buttons">
-          <a href="#projects" className="primary-btn">
+          <Link to="/projects" className="primary-btn">
             View Projects
-          </a>
+          </Link>
 
-          <a href="#contact" className="secondary-btn">
+          <Link to="/contact" className="secondary-btn">
             Contact Me
-          </a>
+          </Link>
         </div>
       </div>
     </header>
