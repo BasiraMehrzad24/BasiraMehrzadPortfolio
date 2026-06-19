@@ -10,7 +10,7 @@ import ScrollProgress from "./components/ScrollProgress";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Contact from "./Pages/Contact";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ProjectDetails from "./pages/ProjectDetails";
 function App() {
