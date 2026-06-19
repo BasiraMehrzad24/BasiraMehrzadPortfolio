@@ -20,13 +20,23 @@ function Skills() {
       fact: "I enjoy creating modern UI designs.",
     },
     {
-      name: "JavaScript",
+      name: "JavaScript(ES6)",
       level: 85,
       fact: "React made me love JavaScript.",
     },
     {
       name: "React",
       level: 80,
+      fact: "My favorite frontend library.",
+    },
+    {
+      name: "Laravel",
+      level: 80,
+      fact: "My favorite frontend library.",
+    },
+    {
+      name: "TailwindCSS",
+      level: 70,
       fact: "My favorite frontend library.",
     },
   ];

@@ -17,6 +17,9 @@ const projects = [
 
     status: "In Progress",
 
+    progress: 80,
+
+
     challenges:
       "Building reusable React components, theme switching and animations.",
 
@@ -46,6 +49,9 @@ const projects = [
 
     status: "Completed",
 
+    progress: 100,
+
+
     challenges:
       "Working with large forms, dashboards and complex business requirements.",
 
@@ -74,6 +80,9 @@ const projects = [
     duration: "1 Week",
 
     status: "Completed",
+
+    progress: 60,
+
 
     challenges:
       "Creating a responsive educational website and organizing content structure.",

@@ -119,11 +119,11 @@ function Feedback() {
             value={sortType}
             onChange={(e) => setSortType(e.target.value)}
           >
-            <option value="highest">⭐ Highest Rating</option>
+            <option value="highest"> Highest Rating</option>
 
-            <option value="lowest">📉 Lowest Rating</option>
+            <option value="lowest">Lowest Rating</option>
 
-            <option value="newest">🕒 Newest First</option>
+            <option value="newest">Newest First</option>
           </select>
         </div>
 

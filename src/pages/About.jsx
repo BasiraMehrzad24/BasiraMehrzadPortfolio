@@ -1,9 +1,11 @@
 import { useState } from "react";
 import profileImage from "../assets/images/basiramehrzad.PNG";
+import { useUser } from "../context/UserContext";
 
 function About() {
   const [showMore, setShowMore] = useState(false);
   const [avatarReaction, setAvatarReaction] = useState("💻 Frontend Developer");
+  const user = useUser();
 
   return (
     <section id="about" className="about-section">
@@ -25,7 +27,7 @@ function About() {
         </div>
 
         <div className="about-content">
-          <span className="about-tag">Frontend Developer</span>
+          <span className="about-tag">{user.role}</span>
           <p>
             I build modern, responsive, and user-friendly web applications with
             React and JavaScript. I enjoy transforming ideas into clean,

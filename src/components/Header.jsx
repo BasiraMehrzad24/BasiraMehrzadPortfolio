@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 function Header() {
+  const user = useUser();
+
   const quotes = [
     "Keep learning every day.",
     "Dream big and build bigger than your dreams.",
@@ -49,7 +52,7 @@ function Header() {
     <header id="home" className="hero">
       <div className="hero-content">
         <h2>
-          Hi, I'm <span>Basira Mehrzad</span>
+          Hi, I'm <span>{user.name}</span>
         </h2>
         <h3 className="typing-text">
           {text}

@@ -3,7 +3,6 @@ import About from "../pages/About";
 import Skills from "../components/Skills";
 import Projects from "../pages/Projects";
 import Feedback from "../components/Feedback";
-import ProjectUpdates from "../components/ProjectUpdates";
 
 function Home() {
   return (
@@ -13,7 +12,6 @@ function Home() {
       <Skills />
       <Projects />
       <Feedback />
-      <ProjectUpdates />
     </>
   );
 }

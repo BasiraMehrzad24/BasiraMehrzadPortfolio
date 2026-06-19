@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import { useUser } from "../context/UserContext";
 
 function Navbar() {
   const { theme, setTheme } = useTheme();
+  const user = useUser();
   return (
     <nav className="navbar">
-      <h2>Basira Mehrzad</h2>
+      <h2>{user.name}</h2>
       <ul className="nav-links">
         <li>
           <NavLink to="/">Home</NavLink>
