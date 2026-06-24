@@ -32,26 +32,12 @@ function Navbar() {
       </ul>
 
       <div className="theme-switcher">
-        <button
-          className={`theme-btn ${theme === "dark" ? "active-theme" : ""}`}
-          onClick={() => setTheme("dark")}
+        <div
+          className={`theme-toggle ${theme === "light" ? "light" : "dark"}`}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          Dark
-        </button>
-
-        <button
-          className={`theme-btn ${theme === "light" ? "active-theme" : ""}`}
-          onClick={() => setTheme("light")}
-        >
-          Light
-        </button>
-
-        <button
-          className={`theme-btn ${theme === "ocean" ? "active-theme" : ""}`}
-          onClick={() => setTheme("ocean")}
-        >
-          Ocean
-        </button>
+          <div className="toggle-thumb">{theme === "dark" ? "🌙" : "☀️"}</div>
+        </div>
       </div>
     </nav>
   );

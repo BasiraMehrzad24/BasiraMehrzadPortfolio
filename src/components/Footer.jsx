@@ -4,15 +4,29 @@ function Footer({ openContact }) {
   return (
     <footer className="footer">
       <div className="social-links">
-        <a href="https://github.com/BasiraMehrzad24">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+          href="https://github.com/BasiraMehrzad24"
+        >
           <FaGithub />
         </a>
 
-        <a href="https://www.linkedin.com/in/basira-mehrzad-3679ab25a">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+          href="https://www.linkedin.com/in/basira-mehrzad-3679ab25a"
+        >
           <FaLinkedin />
         </a>
 
-        <button className="contact-icon" onClick={openContact}>
+        <button
+          className="contact-icon"
+          onClick={openContact}
+          aria-label="Call me"
+        >
           <FaPhone />
         </button>
       </div>

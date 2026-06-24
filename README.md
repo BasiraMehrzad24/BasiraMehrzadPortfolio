@@ -1,179 +1,99 @@
-# React Developer Portfolio
+# Basira Mehrzad Portfolio Website
 
-A modern responsive developer portfolio built with React and Vite.
+A modern, responsive portfolio website built with React. This project showcases my skills, projects, experience, and contact information in an interactive and accessible user interface.
 
 ## Features
 
-- Responsive modern UI
-- Dark Theme
-- Light Theme
-- Ocean Theme
-- Glassmorphism navbar
-- Animated hover effects
-- Dynamic project cards
-- Featured project badges
-- Dynamic motivational quotes
-- Social media icons
-- Orbit-style project updates widget
-- Testimonials section
-- Contact modal popup
-- Live message preview
-- Form validation
-- Email validation with instant feedback
-- Toast notifications
-- LocalStorage integration for saving unsent messages
-- Mobile responsive design
-- Fully component-based architecture
+- Responsive design for desktop, tablet, and mobile devices
+- Dark and Light theme switcher
+- Project showcase with detailed project pages
+- Favorites system using React Context API
+- Contact form with validation
+- Local Storage support for saving form data
+- Dynamic routing using React Router
+- Accessible form controls and navigation
+- Performance optimized with lazy loading
+- Lighthouse optimized
 
 ## Technologies Used
 
 - React
+- React Router DOM
+- JavaScript (ES6+)
+- CSS3
+- Context API
+- Local Storage API
 - Vite
-- JavaScript
-- CSS
-- React Icons
-- LocalStorage API
 
-## Components
+## Project Structure
 
-### Navbar
-
-- Navigation links
-- Theme toggle buttons
-- Responsive navigation menu
-- Glassmorphism effect
-
-### Header
-
-- Developer introduction
-- Welcome message using props
-- Dynamic motivational quote generator
-
-### Profile
-
-- Profile image
-- Developer title
-- Short bio
-- Decorative animated elements
-
-### About
-
-- Personal introduction
-- Goals section
-- Hobbies list
-- Show More / Show Less functionality
-
-### Projects
-
-- Dynamic project rendering using `.map()`
-- Featured project badge
-- Tech stack badges
-- Responsive project cards
-
-### Testimonials
-
-- Dynamic testimonial cards
-- Star ratings
-- User feedback display
-
-### Project Updates
-
-- Orbit-style update widget
-- Dynamic project updates
-- Automatic update switching every 15 seconds
-- Interactive visual milestone tracker
-
-### Contact
-
-- Contact form modal
-- Live message preview
-- Name validation
-- Email validation
-- Message validation
-- Auto-save form data using LocalStorage
-- Restore unsent messages after refresh
-- Success toast notification
-
-### Footer
-
-- GitHub link
-- LinkedIn link
-- Contact shortcut button
-- Dynamic current year
+src/
+├── components/
+├── pages/
+├── context/
+├── data/
+├── assets/
+└── App.jsx
 
 ## Installation
 
-Clone the repository:
+1. Clone the repository
 
-```bash
-git clone https://github.com/your-username/portfolio.git
-```
+git clone <repository-url>
 
-Install dependencies:
+2. Navigate to the project folder
 
-```bash
+cd portfolio
+
+3. Install dependencies
+
 npm install
-```
 
-Run the development server:
+4. Start development server
 
-```bash
 npm run dev
-```
 
-Build for production:
+## Build for Production
 
-```bash
 npm run build
-```
 
-## Responsive Design
+## Lighthouse Scores
 
-This project is fully responsive using:
+| Category       | Score |
+| -------------- | ----- |
+| Performance    | 96    |
+| Accessibility  | 76    |
+| Best Practices | 100   |
+| SEO            | 83    |
 
-- Flexbox
-- CSS Grid
-- Media Queries
-- Mobile-first responsive layouts
+## Screenshots
 
-## Theme Colors
+### Home Page
 
-### Dark Theme
+(Add screenshot here)
 
-- Background: `#050816`
-- Primary: `#00F5D4`
-- Accent: `#7C3AED`
+### Projects Page
 
-### Light Theme
+(Add screenshot here)
 
-- Soft modern pastel palette
-- Clean minimal design
+### Contact Page
 
-### Ocean Theme
-
-- Deep Ocean Blue
-- Aqua and Turquoise accents
-- Ocean-inspired gradients
-- Enhanced visual contrast
+(Add screenshot here)
 
 ## Future Improvements
 
-- Add React Router
-- Add animations with Framer Motion
-- Connect contact form to email service
-- Add backend integration
-- Add blog section
-- Add project detail pages
-- Deploy with custom domain
+- Backend integration for contact form
+- Multi-language support
+- Blog section
+- Advanced project filtering
+- Improved accessibility score
 
 ## Author
 
 Basira Mehrzad
 
-Frontend Developer passionate about building modern, responsive, and interactive web applications using React and JavaScript.
+Frontend Developer
 
-GitHub:
-https://github.com/BasiraMehrzad24
+GitHub: https://github.com/yourusername
 
-LinkedIn:
-https://www.linkedin.com/in/basira-mehrzad-3679ab25a
+LinkedIn: https://linkedin.com/in/yourprofile

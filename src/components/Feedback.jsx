@@ -115,6 +115,9 @@ function Feedback() {
         <h2>Visitor Feedback</h2>
 
         <div className="sort-dropdown">
+          <label htmlFor="feedback-sort" className="sr-only">
+            Sort Feedback
+          </label>
           <select
             value={sortType}
             onChange={(e) => setSortType(e.target.value)}

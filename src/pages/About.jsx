@@ -1,11 +1,16 @@
-import { useState } from "react";
-import profileImage from "../assets/images/basiramehrzad.PNG";
+import { useEffect, useState } from "react";
+import profileImage from "../assets/images/basiramehrzad.webp";
 import { useUser } from "../context/UserContext";
 
 function About() {
   const [showMore, setShowMore] = useState(false);
   const [avatarReaction, setAvatarReaction] = useState("💻 Frontend Developer");
+
   const user = useUser();
+
+  useEffect(() => {
+    document.title = "About | Basira Mehrzad";
+  }, []);
 
   return (
     <section id="about" className="about-section">
@@ -17,17 +22,20 @@ function About() {
             onMouseLeave={() => setAvatarReaction("👋 Hello!")}
             onClick={() => setAvatarReaction("🚀 React Enthusiast")}
           >
-            <img src={profileImage} alt="Profile" />
+            <img src={profileImage} alt="Basira Mehrzad profile photo" />
 
             <div className="avatar-overlay">{avatarReaction}</div>
 
-            <div className="lines"></div>
-            <div className="dots"></div>
+            <div className="lines" aria-hidden="true"></div>
+            <div className="dots" aria-hidden="true"></div>
           </div>
         </div>
 
         <div className="about-content">
+          <h2>About Me</h2>
+
           <span className="about-tag">{user.role}</span>
+
           <p>
             I build modern, responsive, and user-friendly web applications with
             React and JavaScript. I enjoy transforming ideas into clean,
@@ -51,7 +59,14 @@ function About() {
             </div>
           </div>
 
-          <button className="about-btn" onClick={() => setShowMore(!showMore)}>
+          <button
+            className="about-btn"
+            onClick={() => setShowMore(!showMore)}
+            aria-expanded={showMore}
+            aria-label={
+              showMore ? "Show less information" : "Show more information"
+            }
+          >
             {showMore ? "Show Less" : "Learn More"}
           </button>
 
@@ -70,7 +85,7 @@ function About() {
                   <span>🎓</span>
                   <div>
                     <h4>Education</h4>
-                    <p> Bachloar of Computer Science </p>
+                    <p>Bachelor of Computer Science</p>
                   </div>
                 </div>
 
@@ -100,6 +115,22 @@ function About() {
               </div>
 
               <div className="about-story">
+                <h3>Career Goals</h3>
+
+                <p>
+                  My goal is to become a professional Frontend Developer and
+                  contribute to building modern, accessible, and user-friendly
+                  web applications that solve real-world problems.
+                </p>
+
+                <h3>Work Philosophy</h3>
+
+                <p>
+                  I believe great software should be simple, accessible, and
+                  enjoyable to use. I focus on writing clean code, continuous
+                  learning, and creating meaningful user experiences.
+                </p>
+
                 <h3>My Journey</h3>
 
                 <p>

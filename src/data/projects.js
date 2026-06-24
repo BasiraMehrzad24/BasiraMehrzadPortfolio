@@ -1,6 +1,6 @@
-import image1 from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
+import image1 from "../assets/images/image1.webp";
+import image2 from "../assets/images/image2.webp";
+import image3 from "../assets/images/image3.webp";
 
 const projects = [
   {
@@ -32,7 +32,14 @@ const projects = [
       "JavaScript",
     ],
 
-    featured: true,
+    problem:
+  "I needed a professional online presence to showcase my skills and projects.",
+
+solution:
+  "Built a responsive portfolio using React, React Router, and Context API.",
+
+outcome:
+  "Created a professional portfolio that highlights my projects, skills, and developer journey.",
   },
 
   {
@@ -64,7 +71,14 @@ const projects = [
       "PHP",
     ],
 
-    featured: false,
+    problem:
+  "Managing employee timesheets manually was time-consuming.",
+
+solution:
+  "Developed a dashboard to organize and track employee work hours.",
+
+outcome:
+  "Improved workflow organization and simplified reporting processes.",
   },
 
   {
@@ -96,7 +110,14 @@ const projects = [
       "UI/UX"
     ],
 
-    featured: false,
+    problem:
+  "The university needed a modern and responsive online presence.",
+
+    solution:
+    "Built a structured educational website with responsive layouts.",
+
+   outcome:
+  "Provided an accessible platform for students and visitors.",
   },
 ];
 

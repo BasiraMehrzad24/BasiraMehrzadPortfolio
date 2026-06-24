@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import projects from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
@@ -11,6 +11,10 @@ function Projects() {
     selectedTech === "All"
       ? projects
       : projects.filter((project) => project.techStack.includes(selectedTech));
+
+  useEffect(() => {
+    document.title = "Projects | Basira Mehrzad";
+  }, []);
 
   return (
     <section id="projects" className="projects">

@@ -75,6 +75,10 @@ function Header() {
           <Link to="/contact" className="secondary-btn">
             Contact Me
           </Link>
+
+          <a href="/Basira Mehrzad resume.pdf" download className="resume-btn">
+            Download Resume
+          </a>
         </div>
       </div>
     </header>
